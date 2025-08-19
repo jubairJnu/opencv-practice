@@ -1,0 +1,15 @@
+import cv2
+
+img = cv2.imread("input/image.png")
+
+# threshold
+
+
+# print(img)
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+_, thresh = cv2.threshold(gray_img, 127, 255, cv2.THRESH_BINARY_INV)
+cv2.imwrite("output/thresh.png", thresh)
+cv2.imshow("thres", thresh)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
